@@ -1,0 +1,15 @@
+FROM golang:1.4.1
+
+ENV GITHUB_USER IxDay
+ENV REFS v1.12.0
+
+ADD ./infra/release.py /tmp
+ADD . "/go/src/github.com/$GITHUB_USER/dnsdock"
+
+RUN cd "src/github.com/$GITHUB_USER/dnsdock/" && /tmp/release.py
+
+#RUN cd /go/src/github.com/tonistiigi/dnsdock && \
+#    go get -v github.com/tools/godep && \
+#    godep restore && \
+#    go build -o ./bin/dnsdock -ldflags "-X main.version `git describe --tags HEAD`" ./...
+
