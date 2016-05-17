@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/tonistiigi/dnsdock.png)](http://travis-ci.org/tonistiigi/dnsdock)
+[![Build Status](https://secure.travis-ci.org/IxDay/dnsdock.png)](http://travis-ci.org/IxDay/dnsdock)
 
 
 ## dnsdock

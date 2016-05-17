@@ -1,8 +1,18 @@
 language: go
-
 go:
-    - 1.4
-
+- 1.4
 before_script:
 
-script: make test
+script:
+  - make
+  - make test
+deploy:
+  provider: releases
+  overwrite: true
+  api_key:
+    secure: xUtGvpkWpBc2/UkWw0kVlUUWHu9LO21ihNagrk1MpgMI2NA+6Fs6P72UXEAi6NqZA+kDsvPcVnjh/imTi9tofSQIv9TfhqieIhTCxVTLVxtPbMHT0UCKGQqN0qThHWI2KXUVpww+MsRNe/jp1NQG1LEtrnUsDEVgvFKhUtxVpRjuuWRrudCbY8K3pqf4ryFgwJNJdmKh9/RneG20BnshHKp1g+9klEsyIKg0pGy33vtut2Mx0RkpusEIY1jXbyuiJaKHGXphtvX58gRLQQIFJfoDER0ILd0eGU3PEop8x2F/zF3qQMOqhQ+hPLsQ5R1SWj7gPhZ8YT+dTpih8BSL+KaqjzLUajyaN24ub/mv9FZrAlObtZBFL8tIP43bTJlAlt1PBduqHpsslzg+xIWPzMbPfSOSJHB3ft90zPbmujiqhISaPtGyz5WUUwU6LQgI9oq8QEmwik2+/rq5u/QPWZaCqxXirrff+iu9qWgnpZ2aDhED9zO7Phn48KQUX4RGVmebFsqzW0kP52g0lOoCeCYXisbbSNdgDNdGlSzteNgSgl7cB+sQNiaAyI53FdsAjX3tixqXH6Iw3uY5QXi3Hcvg0NvsIw86n2Xu/TvJfZYCNIKy2qQjt9txw3mBbZWGsI24YV4DPKptsAQ8TAgm7w8l/Ps1galcYEJEvYmj3CY=
+  file: "dnsdock"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: IxDay/dnsdock
